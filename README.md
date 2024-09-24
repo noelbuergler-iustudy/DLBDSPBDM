@@ -172,6 +172,7 @@ You can also view the interactive diagram [here](https://dbdiagram.io/d/TABLE-66
 | `reviewer_id` (FK)      | INTEGER       | ID of the user writing the review          |
 | `reviewee_id` (FK)      | INTEGER       | ID of the user or accommodation being reviewed |
 | `booking_id` (FK)       | INTEGER       | ID of the associated booking               |
+| `review_type`           | ENUM          | Type of review: 'Guest-to-Host', or 'Host-to-Guest' |
 | `rating`                | INTEGER       | Numerical rating given in the review       |
 | `review_text`           | TEXT          | Text content of the review                 |
 | `review_date`           | DATE          | Date when the review was submitted         |

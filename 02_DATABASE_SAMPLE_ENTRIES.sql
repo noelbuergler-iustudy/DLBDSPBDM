@@ -348,33 +348,33 @@ INSERT INTO `Review` (
     `review_id`, `reviewer_id`, `reviewee_id`, 
     `booking_id`, `rating`, `review_text`, `review_date`
 ) VALUES
--- Guest to Host Reviews
-(1, 1, 2, 1, 5, 'Alice had a wonderful stay! The apartment was clean and exactly as described.', '2024-10-05'),
-(2, 4, 5, 2, 4, 'Edward was a great host. The country house was spacious and comfortable.', '2024-11-15'),
-(3, 9, 10, 4, 5, 'Julia was an excellent host. The bungalow was perfect for our family.', '2024-10-20'),
-(4, 11, 12, 5, 5, 'Lily provided a luxurious experience. The villa was beautiful and well-maintained.', '2024-11-10'),
-(5, 14, 16, 6, 4, 'Paula enjoyed her stay at the cabin. It was peaceful and cozy.', '2024-12-07'),
-(6, 16, 17, 8, 5, 'Quentin was an outstanding host. The suite was elegant and comfortable.', '2024-11-20'),
-(7, 18, 19, 9, 3, 'Steve was helpful, but there were some issues with the cleanliness.', '2024-12-15'),
-(8, 20, 22, 10, 5, 'Victor had a fantastic stay. The townhouse was elegant and well-equipped.', '2024-10-12'),
-(9, 1, 21, 11, 4, 'Ursula was a courteous host. The studio was compact but had all essentials.', '2024-11-25'),
-(10, 4, 5, 12, 5, 'Edward provided an exceptional lakeside villa experience.', '2024-12-22'),
-(11, 6, 14, 13, 4, 'Nina was a friendly host. The cottage was eco-friendly and comfortable.', '2024-10-22'),
-(12, 9, 10, 15, 5, 'Julia was attentive and made our stay enjoyable at the eco-friendly cottage.', '2024-12-12'),
-(13, 11, 12, 16, 4, 'Lily ensured a pleasant stay at the treehouse. It was unique and well-maintained.', '2024-10-18'),
-(14, 14, 17, 17, 5, 'Quentin was an amazing host. The suite in the city center was luxurious.', '2024-11-06'),
-(15, 16, 19, 18, 5, 'Steve was a great host. The artist loft was inspiring and comfortable.', '2024-12-27'),
-(16, 18, 22, 20, 5, 'Victor had a luxurious stay at the premium lakeside cabin. Highly recommended!', '2024-11-25'),
-(17, 1, 21, 21, 4, 'Ursula provided a minimalist studio that was clean and efficient.', '2024-12-05'),
-(18, 4, 5, 22, 5, 'Edwards modern family villa was perfect for our extended family vacation.', '2024-10-25'),
-(19, 6, 14, 23, 4, 'Nina was a considerate host. The compact city flat was conveniently located.', '2024-11-15'),
-(20, 9, 10, 24, 5, 'Julia provided a peaceful stay at the suburban bungalow. Everything was perfect.', '2024-12-12'),
--- Host to Guest Reviews
-(21, 2, 1, 1, 5, 'Alice was a respectful and tidy guest. Highly recommended!', '2024-10-06'),
-(22, 5, 4, 2, 4, 'Diana was a pleasant guest. Left the country house in good condition.', '2024-11-16'),
-(23, 10, 9, 4, 5, 'Ian was an excellent guest. Took great care of the bungalow.', '2024-10-21'),
-(24, 12, 11, 5, 5, 'Kevin was a wonderful guest. Enjoyed hosting him at the villa.', '2024-11-11'),
-(25, 16, 14, 6, 4, 'Paula was a friendly guest. Appreciated her respect for the cabin rules.', '2024-12-08');
+-- Guest-to-Host Reviews
+(1, 1, 2, 1, 'Guest-to-Host', 5, 'Alice had a wonderful stay! The apartment was clean and exactly as described.', '2024-10-05'),
+(2, 4, 5, 2, 'Guest-to-Host', 4, 'Diana had a pleasant stay. The country house was spacious and comfortable.', '2024-11-15'),
+(3, 9, 10, 4, 'Guest-to-Host', 5, 'Ian had an excellent experience. The bungalow was perfect for our family.', '2024-10-20'),
+(4, 11, 12, 5, 'Guest-to-Host', 5, 'Kevin had a luxurious experience at the villa. Well-maintained and beautiful.', '2024-11-10'),
+(5, 1, 16, 6, 'Guest-to-Host', 4, 'Alice had to cancel due to personal reasons.', '2024-12-07'),
+(6, 16, 17, 8, 'Guest-to-Host', 5, 'Quentin was an outstanding host. The suite was elegant and comfortable.', '2024-11-20'),
+(7, 18, 19, 9, 'Guest-to-Host', 3, 'Rachel enjoyed her stay, but there were some issues with cleanliness.', '2024-12-15'),
+(8, 20, 2, 10, 'Guest-to-Host', 5, 'Victor had a fantastic stay with excellent amenities.', '2024-10-12'),
+(9, 1, 21, 11, 'Guest-to-Host', 4, 'Alice was a courteous guest. The studio was compact but had all essentials.', '2024-11-25'),
+(10, 4, 5, 12, 'Guest-to-Host', 5, 'Diana had an exceptional experience at Edwards lakeside villa.', '2024-12-22'),
+(11, 6, 14, 13, 'Guest-to-Host', 4, 'Nina was a friendly host. The cottage was eco-friendly and comfortable.', '2024-10-22'),
+(12, 9, 10, 15, 'Guest-to-Host', 5, 'Ian had a delightful stay at the eco-friendly bungalow.', '2024-12-12'),
+(13, 11, 12, 16, 'Guest-to-Host', 4, 'Kevin enjoyed his stay at Lilys treehouse. It was unique and well-maintained.', '2024-10-18'),
+(14, 4, 17, 17, 'Guest-to-Host', 5, 'Diana had a wonderful experience at Quentins city center suite.', '2024-11-06'),
+(15, 16, 19, 18, 'Guest-to-Host', 5, 'Paula had a great stay at Steves artist loft. Highly inspiring!', '2024-12-27'),
+(16, 18, 19, 20, 'Guest-to-Host', 5, 'Rachel had a luxurious stay at Steves premium lakeside cabin. Highly recommended!', '2024-11-25'),
+(17, 1, 21, 21, 'Guest-to-Host', 4, 'Alice provided a minimalist studio that was clean and efficient.', '2024-12-05'),
+(18, 4, 5, 22, 'Guest-to-Host', 5, 'Diana enjoyed her stay at Edwards modern family villa. Perfect for extended family.', '2024-10-25'),
+(19, 6, 14, 23, 'Guest-to-Host', 4, 'Nina was a considerate host. The compact city flat was conveniently located.', '2024-11-15'),
+(20, 9, 10, 24, 'Guest-to-Host', 5, 'Ian had a peaceful stay at Julias suburban bungalow. Everything was perfect.', '2024-12-12'),
+-- Host-to-Guest Reviews
+(21, 2, 1, 1, 'Host-to-Guest', 5, 'Alice was a respectful and tidy guest. Highly recommended!', '2024-10-06'),
+(22, 5, 4, 2, 'Host-to-Guest', 4, 'Diana was a pleasant guest. Left the country house in good condition.', '2024-11-16'),
+(23, 10, 9, 4, 'Host-to-Guest', 5, 'Ian was an excellent guest. Took great care of the bungalow.', '2024-10-21'),
+(24, 12, 11, 5, 'Host-to-Guest', 5, 'Kevin was a wonderful guest. Enjoyed hosting him at the villa.', '2024-11-11'),
+(25, 14, 16, 6, 'Host-to-Guest', 4, 'Paula was a friendly guest. Appreciated her respect for the cabin rules.', '2024-12-08');
 
 -- ===============================================================
 -- Table: Message

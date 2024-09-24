@@ -108,6 +108,7 @@ CREATE TABLE `Review` (
   `review_id` INTEGER PRIMARY KEY, -- Unique identifier for each review
   `reviewer_id` INTEGER, -- ID of the user writing the review (Foreign Key)
   `reviewee_id` INTEGER, -- ID of the user or accommodation being reviewed (Foreign Key)
+  `review_type` ENUM('Guest-to-Host', 'Host-to-Guest') NOT NULL, -- Specifies the direction of the review
   `booking_id` INTEGER, -- ID of the associated booking (Foreign Key)
   `rating` INTEGER, -- Numerical rating given in the review
   `review_text` TEXT, -- Text content of the review
