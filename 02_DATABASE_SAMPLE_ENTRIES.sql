@@ -1,6 +1,7 @@
 -- ===============================================================
 -- Airbnb Clone Database: Phase 2 - Sample Data Entries
 -- Created on: 2024-09-24
+-- Updated on: 2024-10-14
 -- Description: This script inserts 25 sample data entries into each 
 -- table of the Airbnb-like platform database.
 -- ===============================================================

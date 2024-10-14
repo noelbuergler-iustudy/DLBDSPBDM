@@ -1,6 +1,7 @@
 -- ===============================================================
 -- Airbnb Clone Database: Phase 2 - Database Schema
 -- Created on: 2024-09-24
+-- Updated on: 2024-10-14
 -- Description: This script creates the database schema for an
 -- Airbnb-like platform, including tables for users, accommodations,
 -- bookings, reviews, messaging, amenities, and more. Each table
@@ -304,6 +305,10 @@ ALTER TABLE `Accommodation`
 ALTER TABLE `Booking` 
   ADD FOREIGN KEY (`guest_id`) REFERENCES `User` (`user_id`);
 
+-- Link Booking to Accommodation
+ALTER TABLE `Booking` 
+  ADD FOREIGN KEY (`accommodation_id`) REFERENCES `Accommodation` (`accommodation_id`);
+
 -- Link HostVerification to User (Host)
 ALTER TABLE `HostVerification` 
   ADD FOREIGN KEY (`host_id`) REFERENCES `User` (`user_id`);
@@ -316,6 +321,10 @@ ALTER TABLE `SearchHistory`
 ALTER TABLE `Payment` 
   ADD FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`);
 
+-- Link Payment to Booking
+ALTER TABLE `Payment` 
+  ADD FOREIGN KEY (`booking_id`) REFERENCES `Booking` (`booking_id`);
+
 -- Link Review to User (Reviewer)
 ALTER TABLE `Review` 
   ADD FOREIGN KEY (`reviewer_id`) REFERENCES `User` (`user_id`);
@@ -324,6 +333,10 @@ ALTER TABLE `Review`
 ALTER TABLE `Review` 
   ADD FOREIGN KEY (`reviewee_id`) REFERENCES `User` (`user_id`);
 
+  -- Link Review to Booking
+ALTER TABLE `Review` 
+  ADD FOREIGN KEY (`booking_id`) REFERENCES `Booking` (`booking_id`);
+
 -- Link Message to User (Sender)
 ALTER TABLE `Message` 
   ADD FOREIGN KEY (`sender_id`) REFERENCES `User` (`user_id`);
@@ -331,6 +344,10 @@ ALTER TABLE `Message`
 -- Link Message to User (Receiver)
 ALTER TABLE `Message` 
   ADD FOREIGN KEY (`receiver_id`) REFERENCES `User` (`user_id`);
+
+-- Link Message to Booking
+ALTER TABLE `Message` 
+  ADD FOREIGN KEY (`booking_id`) REFERENCES `Booking` (`booking_id`);
 
 -- Link Wishlist to User
 ALTER TABLE `Wishlist` 
@@ -344,29 +361,21 @@ ALTER TABLE `PayoutMethod`
 ALTER TABLE `UserLanguage` 
   ADD FOREIGN KEY (`user_id`) REFERENCES `User` (`user_id`);
 
--- Link Review to Booking
-ALTER TABLE `Review` 
-  ADD FOREIGN KEY (`booking_id`) REFERENCES `Booking` (`booking_id`);
-
--- Link Message to Booking
-ALTER TABLE `Message` 
-  ADD FOREIGN KEY (`booking_id`) REFERENCES `Booking` (`booking_id`);
-
--- Link Payment to Booking
-ALTER TABLE `Payment` 
-  ADD FOREIGN KEY (`booking_id`) REFERENCES `Booking` (`booking_id`);
+-- Link UserLanguage to Language
+ALTER TABLE `UserLanguage` 
+  ADD FOREIGN KEY (`language_id`) REFERENCES `Language` (`language_id`);
 
 -- Link Cancellation to Booking
 ALTER TABLE `Cancellation` 
   ADD FOREIGN KEY (`booking_id`) REFERENCES `Booking` (`booking_id`);
 
--- Link Booking to Accommodation
-ALTER TABLE `Booking` 
-  ADD FOREIGN KEY (`accommodation_id`) REFERENCES `Accommodation` (`accommodation_id`);
-
 -- Link AccommodationAmenity to Accommodation
 ALTER TABLE `AccommodationAmenity` 
   ADD FOREIGN KEY (`accommodation_id`) REFERENCES `Accommodation` (`accommodation_id`);
+
+  -- Link AccommodationAmenity to Amenity
+ALTER TABLE `AccommodationAmenity` 
+  ADD FOREIGN KEY (`amenity_id`) REFERENCES `Amenity` (`amenity_id`);
 
 -- Link Photo to Accommodation
 ALTER TABLE `Photo` 
@@ -388,18 +397,10 @@ ALTER TABLE `NeighborhoodInfo`
 ALTER TABLE `WishlistItem` 
   ADD FOREIGN KEY (`accommodation_id`) REFERENCES `Accommodation` (`accommodation_id`);
 
--- Link Discount to Accommodation
-ALTER TABLE `Discount` 
-  ADD FOREIGN KEY (`accommodation_id`) REFERENCES `Accommodation` (`accommodation_id`);
-
--- Link AccommodationAmenity to Amenity
-ALTER TABLE `AccommodationAmenity` 
-  ADD FOREIGN KEY (`amenity_id`) REFERENCES `Amenity` (`amenity_id`);
-
--- Link WishlistItem to Wishlist
+  -- Link WishlistItem to Wishlist
 ALTER TABLE `WishlistItem` 
   ADD FOREIGN KEY (`wishlist_id`) REFERENCES `Wishlist` (`wishlist_id`);
 
--- Link UserLanguage to Language
-ALTER TABLE `UserLanguage` 
-  ADD FOREIGN KEY (`language_id`) REFERENCES `Language` (`language_id`);
+-- Link Discount to Accommodation
+ALTER TABLE `Discount` 
+  ADD FOREIGN KEY (`accommodation_id`) REFERENCES `Accommodation` (`accommodation_id`);
